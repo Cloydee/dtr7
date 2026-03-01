@@ -98,6 +98,9 @@ const formatTo12h = (time24: string) => {
 };
 
 export default function App() {
+  useEffect(() => {
+  document.title = "GNHS DTRMS";
+}, []);
   const [user, setUser] = useState<UserSession | null>(() => {
     const saved = localStorage.getItem('dtr_user');
     return saved ? JSON.parse(saved) : null;
