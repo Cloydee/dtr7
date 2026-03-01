@@ -1,0 +1,7 @@
+name = "dtr-system"
+pages_build_output_dir = "dist"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "dtr_db"
+database_id = "YOUR_DATABASE_ID_HERE"
