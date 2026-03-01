@@ -39,7 +39,7 @@ import {
   ResponsiveContainer,
   Cell
 } from 'recharts';
-
+import PageTitle from "./PageTitle";
 interface Employee {
   id: number;
   name: string;
@@ -98,9 +98,18 @@ const formatTo12h = (time24: string) => {
 };
 
 export default function App() {
-  useEffect(() => {
-  document.title = "GNHS DTRMS";
-}, []);
+  const [user, setUser] = useState<UserSession | null>(() => {
+    const saved = localStorage.getItem('dtr_user');
+    return saved ? JSON.parse(saved) : null;
+  });
+
+  return (
+    <>
+      <PageTitle title="GNHS DTRMS" />
+      {/* Your existing JSX goes here */}
+    </>
+  );
+}
   const [user, setUser] = useState<UserSession | null>(() => {
     const saved = localStorage.getItem('dtr_user');
     return saved ? JSON.parse(saved) : null;
